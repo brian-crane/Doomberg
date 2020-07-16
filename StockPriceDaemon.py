@@ -5,6 +5,8 @@
 # Run on a cron job cycle
 # No outside API interaction planned at the moment
 
+#
+
 from tools import YFinance as YF
 from tools import IEXCloud as IEX
 

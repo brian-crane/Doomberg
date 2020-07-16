@@ -1,0 +1,16 @@
+User.users table
+
+Stores all users
+
+User.passwords table, stores a HASH of the password
+
+User.portfolio
+
+Holds all users stock holdings, group by userId
+
+Stocks.prices
+Stocks.EPS
+Stocks.Volatility
+Stocks.CompanyValuation
+
+Each table contains ALL stock data for each of the categories shown
