@@ -1,6 +1,10 @@
 APIS for LIVE STOCK data:
 
-https://towardsdatascience.com/best-5-free-stock-market-apis-in-2019-ad91dddec984
-
 # To install yfinance before you use it.
 > pip install yfinance
+
+While YFinance is great for historical data, YFinance data stops at 2019
+
+IEX Cloud is a new API that can give me UP TO DATE results.
+
+https://iexcloud.io/console

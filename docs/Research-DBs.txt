@@ -11,4 +11,17 @@ Needs to be able to:
 Candidiates:
 
 MySql?
+    Pros:
+    Cons:
+
 MongoDB?
+    Pros:
+    Cons:
+
+MariaDB?
+    Pros:
+    Cons:
+
+PostgreSql?
+    Pros:
+    Cons:

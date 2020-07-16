@@ -1,0 +1,28 @@
+PRICE TO EARNING RATIOS NEXT TO STOCK PRICE
+
+COMPANY VALUATION
+
+DAILY TRADING VOLUME
+
+DAILY TRADING VOLUME OVER TIME
+
+DERIVATIVE OF GROTWTH FOR STOCK AND PORTFOLIO
+
+COMPARE PORTFOLIO TO SP500 or ANY # of other stocks
+
+Download ALL HISTORICAL DATAPOINTS for a stock
+    - I want to be able to get the price of a stock
+    - Every day since it's inception as a company to the present
+    - This is used for prediction algorithims
+
+I want to overlay PAST PREDICTED Prices with ACTUAL PERFORMANCE
+    - And be able to see which prediction metric performs most accuratley
+
+Show DIVIDENDS paid out over time, and current
+
+SHOW INSTITUTIONAL HOLDERS
+
+SHOW CASHFLOW
+
+SHOW SUSTAINABILITY
+
