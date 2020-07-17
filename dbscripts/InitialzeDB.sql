@@ -25,7 +25,8 @@ CREATE TABLE Stocks.price (
   symbol varchar(5),
   price numeric,
   price_ts TIMESTAMP,
-  is_market_open boolean,
+  after_hours boolean,
+  source varchar(255),
   created_ts TIMESTAMP,
   modified_ts TIMESTAMP
 );

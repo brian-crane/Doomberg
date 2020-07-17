@@ -7,6 +7,6 @@ def updateStockPortfolioSQL(userId, portfolioId, symbol, quanity):
     return "INSERT INTO users.portfolio (\"portfolio_id\", \"user_id\", \"symbol\", \"quantity\",\"created_ts\",\"modified_ts\") VALUES ('"+str(portfolioId)+"', '"+str(userId)+"', '"+str(symbol)+"', '"+str(quanity)+"',now(),now());"
 
 #add stock price to stocks.price
-def insertSymbolPriceSQL(symbol, price, priceTs, isMarketOpen):
-    return "INSERT INTO stocks.price (\"symbol\", \"price\", \"price_ts\",\"is_market_open\",\"created_ts\",\"modified_ts\") VALUES ('"+str(symbol)+"', '"+str(price)+"', '"+str(priceTs)+"',"+str(isMarketOpen)+",now(),now());"
+def insertSymbolPriceSQL(symbol, price, priceTs, isAfterHours, source):
+    return "INSERT INTO stocks.price (\"symbol\", \"price\", \"price_ts\",\"after_hours\",\"source\",\"created_ts\",\"modified_ts\") VALUES ('"+str(symbol)+"', '"+str(price)+"', '"+str(priceTs)+"',"+str(isAfterHours)+",'"+source+"',now(),now());"
 

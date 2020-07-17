@@ -9,11 +9,14 @@ if debug: print("Connected to DB!")
 
 # Run one query on the DB
 def executeQuery(query):
-    if debug: print("Executing query: " + query)
+    if debug: print("Executing query: " + query.replace("VALUES","\nVALUES"))
     cur = conn.cursor()
     cur.execute(query)
     conn.commit()
-    records = cur.fetchall()
+    try:
+        records = cur.fetchall()
+    except psycopg2.ProgrammingError:
+        return None
     return records
 
 def closeConnection():

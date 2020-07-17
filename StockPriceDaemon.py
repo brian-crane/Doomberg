@@ -18,21 +18,25 @@ Ask for check to mail to me
     -Mail to Me
 
 """
-
-from tools.financeApis import IEXCloud as IEX
+import time
+from tools.financeApis import StockTicker as ST
 from tools.db import DbTools as DB
-from tools.db import SqlHelper as SH
-from tools.db import DbQueries as DBQ
+from tools.db import QueryHelper
+from tools.other import Time as T
 
 debug = True
+sleepTimer = 5
+alwaysGetDayPrice = True
 
-myList = {"NFLX","SPY","TSLA","GOOGL","MSFT","HACK","WFH"}
+myList = {"MSFT","TSLA","SPY"}
 
 for symbol in myList:
-    myDict = IEX.getCurrentStockData(symbol)
-    if not DBQ.dupCheckStockPrice(myDict.get("symbol"),myDict.get("price"),myDict.get("priceTs")):
-        DB.executeQuery(SH.insertSymbolPriceSQL(myDict.get("symbol"),myDict.get("price"),myDict.get("priceTs"),myDict.get("isMarketOpen")))
-    else:
-        if debug: print("We already have " + myDict.get("symbol") + " at $" + myDict.get("price")+ " at " + myDict.get("priceTs"))
+    if T.isMarketOpen() or alwaysGetDayPrice:
+        QueryHelper.insertStockPrice(ST.getIEXCloudData(symbol))
+    if T.isAfterHourTradingOpen():
+        QueryHelper.insertStockPrice(ST.getAfterHourDataCNN(symbol))
+
+    print("sleeping for " + str(sleepTimer) + " seconds... (" + T.getTime()+")")
+    time.sleep(sleepTimer)
 
 DB.closeConnection()
