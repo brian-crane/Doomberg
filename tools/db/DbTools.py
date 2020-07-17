@@ -13,6 +13,8 @@ def executeQuery(query):
     cur = conn.cursor()
     cur.execute(query)
     conn.commit()
+    records = cur.fetchall()
+    return records
 
 def closeConnection():
     conn.close()

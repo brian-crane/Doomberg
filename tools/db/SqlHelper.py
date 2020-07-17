@@ -9,3 +9,4 @@ def updateStockPortfolioSQL(userId, portfolioId, symbol, quanity):
 #add stock price to stocks.price
 def insertSymbolPriceSQL(symbol, price, priceTs, isMarketOpen):
     return "INSERT INTO stocks.price (\"symbol\", \"price\", \"price_ts\",\"is_market_open\",\"created_ts\",\"modified_ts\") VALUES ('"+str(symbol)+"', '"+str(price)+"', '"+str(priceTs)+"',"+str(isMarketOpen)+",now(),now());"
+
