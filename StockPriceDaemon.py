@@ -5,9 +5,21 @@
 # Run on a cron job cycle
 # No outside API interaction planned at the moment
 
-#
+"""
+1. Loop through all stocks in all user portfolios
+2. For each stock get the current value and insert into tables
+3. Wait for X minutes and do it again!
+"""
 
-from tools import YFinance as YF
-from tools import IEXCloud as IEX
+from tools.financeApis import IEXCloud as IEX
+from tools.db import DbTools as DB
+from tools.db import SqlHelper as SH
+from tools import Tools as TOOL
 
-print(IEX.getCurrentStockPrice("TSLA"))
+myList = {"NFLX","SPY","TSLA","GOOGL","MSFT","HACK","WFH"}
+
+for symbol in myList:
+    myDict = IEX.getCurrentStockPrice(symbol)
+    DB.executeQuery(SH.insertSymbolPriceSQL(myDict.get("symbol"),myDict.get("price"),myDict.get("priceTs"),myDict.get("isMarketOpen")))
+
+DB.closeConnection()

@@ -1,8 +1,7 @@
 User.users table
 
-Stores all users
+Stores all users and password hash
 
-User.passwords table, stores a HASH of the password
 
 User.portfolio
 
