@@ -28,7 +28,7 @@ debug = True
 sleepTimer = 5
 alwaysGetDayPrice = True
 alwaysgetAfterHoursPrice = True
-loopTimer = 300 #5 minutes
+loopTimer = 10000 #5 minutes
 
 myList = {"NVDA"}
 myList = DbHelper.getPortfolioStockList()
