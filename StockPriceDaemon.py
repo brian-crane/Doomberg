@@ -21,22 +21,26 @@ Ask for check to mail to me
 import time
 from tools.financeApis import StockTicker as ST
 from tools.db import DbTools as DB
-from tools.db import QueryHelper
+from tools.db import DbHelper
 from tools.other import Time as T
 
 debug = True
 sleepTimer = 5
 alwaysGetDayPrice = True
+alwaysgetAfterHoursPrice = True
+loopCount = 100
+loopTimer = 300 #5 minutes
 
-myList = {"MSFT","TSLA","SPY"}
+myList = {"NVDA"}
+myList = DbHelper.getPortfolioStockList()
 
-for symbol in myList:
-    if T.isMarketOpen() or alwaysGetDayPrice:
-        QueryHelper.insertStockPrice(ST.getIEXCloudData(symbol))
-    if T.isAfterHourTradingOpen():
-        QueryHelper.insertStockPrice(ST.getAfterHourDataCNN(symbol))
-
-    print("sleeping for " + str(sleepTimer) + " seconds... (" + T.getTime()+")")
-    time.sleep(sleepTimer)
-
+while loopCount > 0:
+    for symbol in myList:
+        loopCount -= 1
+        if T.isMarketOpen() or alwaysGetDayPrice:
+            DbHelper.insertStockPrice(ST.getIEXCloudData(symbol))
+        if T.isAfterHourTradingOpen() or alwaysgetAfterHoursPrice:
+            DbHelper.insertStockPrice(ST.getAfterHourDataCNN(symbol))
+        T.sleep(sleepTimer)
+    T.sleep(loopTimer)
 DB.closeConnection()

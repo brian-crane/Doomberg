@@ -5,6 +5,7 @@ CREATE TABLE Users.user (
   pw_hash varchar(255),
   email varchar(255),
   portfolio_id int,
+  net_worth numeric
   created_ts TIMESTAMP,
   modified_ts TIMESTAMP
 );

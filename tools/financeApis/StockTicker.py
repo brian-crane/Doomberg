@@ -13,13 +13,16 @@ def getIEXCloudData(symbol):
     response = requests.get(url)
     if debug: print(url)
     data = str(response.content)
+    if response.status_code != 200:
+        if debug: print("\t\tERROR, statusCode: " + str(response.status_code) +"\n\tmessage: " + data)
+        return None
     data = data[2:len(data)-1]
     data = json.loads(data)
 
     price = data.get("quote").get("latestPrice")
     priceTs = data.get("quote").get("latestUpdate")
     priceTs = datetime.datetime.fromtimestamp(float(priceTs)/1000.)
-    myDict = {"symbol":str(symbol),"price":str(price),"priceTs":str(priceTs), "isAfterHours":False,"source":"IEXCloud"}
+    myDict = {"symbol":str(symbol),"price":str(price),"priceTs":str(priceTs)[0:str(priceTs).rindex(".")], "isAfterHours":False,"source":"IEXCloud"}
     if debug: print(myDict)
     return myDict
 

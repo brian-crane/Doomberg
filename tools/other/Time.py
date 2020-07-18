@@ -3,26 +3,34 @@ import time
 
 debug = True
 
+def sleep(secs):
+    print("sleeping for " + str(secs) + " seconds... (" + T.getTime()+")")
+    time.sleep(secs)
+
 def isMarketOpen():
     hour, min = map(int, time.strftime("%H %M").split())
     if 9*60+30 < hour*60+min < 13*60:
-        if debug: print("Market is Open.")
+        #if debug: print("Market is Open.")
         return True
-    if debug: print("Market is Closed.")
+    #if debug: print("Market is Closed.")
     return False
 
 def isAfterHourTradingOpen():
     hour, min = map(int, time.strftime("%H %M").split())
     if 13*60 < hour*60+min < 17*60:
-        if debug: print("After Hour trading is Open.")
+        #if debug: print("After Hour trading is Open.")
         return True
-    if debug: print("After Hour trading is Closed.")
+    #if debug: print("After Hour trading is Closed.")
     return False
 
 def getTimeInterval(interval):
     year, month, day, hour, min, second = map(int, time.strftime("%Y %m %d %H %M %S").split())
     myDict = {"year":year,"month":month,"day":day,"min":min,"second":second}
     return myDict.get(interval)
+
+def getSqlTime():
+    year, month, day, hour, min, second = map(int, time.strftime("%Y %m %d %H %M %S").split())
+    return str(year)+"-"+str(month)+"-"+str(day)+" "+str(hour)+":"+str(min)+":"+str(second)
 
 def getTime():
     year, month, day, hour, min = map(int, time.strftime("%Y %m %d %H %M").split())

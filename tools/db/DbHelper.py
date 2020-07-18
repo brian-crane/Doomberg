@@ -7,6 +7,14 @@ from tools.db import SqlHelper as SH
 
 debug = True
 
+#Returns all stocks in portfolios, NO DUPLICATES
+def getPortfolioStockList():
+    records = DB.executeQuery("SELECT DISTINCT(symbol) from users.portfolio")
+    newRecords = []
+    for r in records:
+        newRecords.append(r[0])
+    return newRecords
+
 #Returns true if a stock price has already registed in DB
 def dupCheckStockPrice(myDict):
     symbol = myDict.get("symbol")
@@ -19,6 +27,9 @@ def dupCheckStockPrice(myDict):
     return False
 
 def insertStockPrice(myDict):
+    if myDict is None:
+        if debug: print("given None as argument, skipping insertion")
+        return
     symbol = myDict.get("symbol")
     price = myDict.get("price")
     priceTs = myDict.get("priceTs")
