@@ -28,19 +28,16 @@ debug = True
 sleepTimer = 5
 alwaysGetDayPrice = True
 alwaysgetAfterHoursPrice = True
-loopCount = 100
 loopTimer = 300 #5 minutes
 
 myList = {"NVDA"}
 myList = DbHelper.getPortfolioStockList()
 
-while loopCount > 0:
+while True:
     for symbol in myList:
-        loopCount -= 1
         if T.isMarketOpen() or alwaysGetDayPrice:
             DbHelper.insertStockPrice(ST.getIEXCloudData(symbol))
         if T.isAfterHourTradingOpen() or alwaysgetAfterHoursPrice:
             DbHelper.insertStockPrice(ST.getAfterHourDataCNN(symbol))
         T.sleep(sleepTimer)
     T.sleep(loopTimer)
-DB.closeConnection()

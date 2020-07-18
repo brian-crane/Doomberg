@@ -5,7 +5,15 @@ CREATE TABLE Users.user (
   pw_hash varchar(255),
   email varchar(255),
   portfolio_id int,
-  net_worth numeric
+  created_ts TIMESTAMP,
+  modified_ts TIMESTAMP
+);
+
+CREATE TABLE Users.net_worth (
+  user_id int,
+  net_worth int,
+  net_worth_ts varchar(5),
+  quantity int,
   created_ts TIMESTAMP,
   modified_ts TIMESTAMP
 );
