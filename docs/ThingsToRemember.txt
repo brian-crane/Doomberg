@@ -1,0 +1,6 @@
+Slow and Steady wins the race
+Do not be afraid to refactor
+Keep it Simple, Stupid
+Always go for the right design choice, even if it takes hours to accomplish
+Keep the commit messages detailed and helpful
+Plan Ahead

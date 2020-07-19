@@ -4,16 +4,40 @@ This class uses DBTools to call common queries
 
 from tools.db import DbTools as DB
 from tools.db import SqlHelper as SH
+from tools.other import Time as T
 
 debug = True
 
-#Returns all stocks in portfolios, NO DUPLICATES
+def insertNewNetWorth(userId, netWorth):
+    DB.executeQuery("INSERT INTO users.net_worth (user_id, net_worth, net_worth_ts) VALUES ('"+str(userId)+"', '"+str(netWorth)+"', '"+T.getSqlTime()+"');")
+
+def getMostRecentPrice(symbol):
+    return select("SELECT price from Stocks.price where symbol = '"+symbol+"' ORDER BY price_ts DESC LIMIT 1")
+
+#Returns all stocks for a user in form: [symbol, quantity]
+def getNetWorthForUser(userId):
+    records = select("SELECT symbol,quantity from Users.portfolio where user_id = " + str(userId))
+    total = 0.0
+    for record in records:
+        myList = record.split(",")
+        price = getMostRecentPrice(myList[0])[0]
+        value = float(price) * float(myList[1])
+        total += value
+    return round(total, 2)
+
+#Get all users in system
+def getAllUserIds():
+    return select("SELECT user_id from users.user ORDER BY user_id ASC")
+
+#Calculates net_worth for ALL users and adds a new entry to Users.net_worth, with a timestamp
+def calculateAndInsertNetWorthForAllUsers():
+    for userId in getAllUserIds():
+        netWorth = getNetWorthForUser(userId)
+        if netWorth > 0: insertNewNetWorth(userId, netWorth)
+
+#Returns all symbols in portfolios, NO DUPLICATES
 def getPortfolioStockList():
-    records = DB.executeQuery("SELECT DISTINCT(symbol) from users.portfolio")
-    newRecords = []
-    for r in records:
-        newRecords.append(r[0])
-    return newRecords
+    return select("SELECT DISTINCT(symbol) from users.portfolio")
 
 #Returns true if a stock price has already registed in DB
 def dupCheckStockPrice(myDict):
@@ -39,4 +63,15 @@ def insertStockPrice(myDict):
         DB.executeQuery(SH.insertSymbolPriceSQL(symbol,price,priceTs,isAfterHours,source))
     else:
         if debug: print("\tDUPLICATE We already have this:\n\t\t " + str(myDict))
+
+#helper method to run select query
+def select(query):
+    records = DB.executeQuery(query)
+    newRecords = []
+    for r in records:
+        value = r[0]
+        if len(r)>1:
+            value += ","+str(r[1])
+        newRecords.append(value)
+    return newRecords
 

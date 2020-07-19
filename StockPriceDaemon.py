@@ -40,4 +40,5 @@ while True:
         if T.isAfterHourTradingOpen() or alwaysgetAfterHoursPrice:
             DbHelper.insertStockPrice(ST.getAfterHourDataCNN(symbol))
         T.sleep(sleepTimer)
+    DbHelper.calculateAndInsertNetWorthForAllUsers()
     T.sleep(loopTimer)

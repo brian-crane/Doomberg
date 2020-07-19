@@ -1,14 +1,14 @@
 INSERT INTO users.portfolio ("user_id", "symbol", "quantity") VALUES
-('1', 'TSLA', '22');
+(1, 'WFH', '474');
 INSERT INTO users.portfolio ("user_id", "symbol", "quantity") VALUES
-(1', 'SPY', '22');
+(1, 'SPY', '272');
 INSERT INTO users.portfolio ("user_id", "symbol", "quantity") VALUES
-(3', 'TSLA', '22');
+(1, 'AAPL', '90.4377');
 INSERT INTO users.portfolio ("user_id", "symbol", "quantity") VALUES
-(1', 'MSFT', '22');
+(1, 'HACK', '233');
 INSERT INTO users.portfolio ("user_id", "symbol", "quantity") VALUES
-(1', 'HACK', '22');
+(2, 'HACK', '22');
 INSERT INTO users.portfolio ("user_id", "symbol", "quantity") VALUES
-(1', 'NVDA', '22');
+(2, 'TSLA', '22');
 INSERT INTO users.portfolio ("user_id", "symbol", "quantity") VALUES
-(1', 'GOOGL', '22');
+(2, 'GOOGL', '22');

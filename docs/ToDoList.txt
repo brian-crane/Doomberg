@@ -1,0 +1,2 @@
+1. Add a 'name' column to Users table, in case user does not want to enter email
+2.

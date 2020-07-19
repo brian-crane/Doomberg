@@ -1,0 +1,2 @@
+1. POST: /Doomberg/Login(username, password)
+    return a JSON payload with either a true or false if given right password
