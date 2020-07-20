@@ -8,6 +8,21 @@ from tools.other import Time as T
 
 debug = True
 
+def getUserNetWorth(userId):
+    try:
+        value = select("select net_worth from users.net_worth where user_id = "+ str(userId) + "ORDER BY net_worth_ts DESC LIMIT 1")
+    except Exception as e:
+        value = "ERROR! -> " + str(e)
+    return float(value)
+
+
+def getUserInfo(userId):
+    try:
+        value = select("Select * from users.user where user_id = " + str(userId))
+    except Exception as e:
+        value = "ERROR! -> " + str(e)
+    return value
+
 def insertNewNetWorth(userId, netWorth):
     DB.executeQuery("INSERT INTO users.net_worth (user_id, net_worth, net_worth_ts) VALUES ('"+str(userId)+"', '"+str(netWorth)+"', '"+T.getSqlTime()+"');")
 
@@ -39,6 +54,7 @@ def calculateAndInsertNetWorthForAllUsers():
 def getPortfolioStockList():
     return select("SELECT DISTINCT(symbol) from users.portfolio")
 
+
 #Returns true if a stock price has already registed in DB
 def dupCheckStockPrice(myDict):
     symbol = myDict.get("symbol")
@@ -69,9 +85,11 @@ def select(query):
     records = DB.executeQuery(query)
     newRecords = []
     for r in records:
-        value = r[0]
-        if len(r)>1:
-            value += ","+str(r[1])
+        value = str(r[0])
+        i = 1
+        while len(r) > i:
+            value += ","+str(r[i])
+            i+=1
         newRecords.append(value)
     return newRecords
 

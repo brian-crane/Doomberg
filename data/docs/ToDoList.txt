@@ -1,0 +1,11 @@
+1. Add a 'name' column to Users table, in case user does not want to enter email
+2. Flask RESTful api with one POST call for login
+    - register user
+    - add stock to portfolio
+    - delete stock from portfolio
+    - modify stock amount in portfolio
+    - delete account
+3. Re-add support for multiple different portfolios
+    - user1 can have 3 portfolios eg: MyPortfolio, Comparison portfolio, throway portfolio
+4. user net_worth_ts should be the time of most recent stock in portfollio, not system time
+5. Get user net_worth list by date DESC API

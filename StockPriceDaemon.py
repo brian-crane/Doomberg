@@ -25,10 +25,10 @@ from tools.db import DbHelper
 from tools.other import Time as T
 
 debug = True
-sleepTimer = 5
-alwaysGetDayPrice = True
-alwaysgetAfterHoursPrice = True
-loopTimer = 10000 #5 minutes
+sleepTimer = 5 #seconds
+alwaysGetDayPrice = False
+alwaysgetAfterHoursPrice = False
+loopTimer = 180 #seconds
 
 myList = {"NVDA"}
 myList = DbHelper.getPortfolioStockList()
