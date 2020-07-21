@@ -9,7 +9,7 @@ if debug: print("Connected to DB!")
 
 # Run one query on the DB
 def executeQuery(query):
-    if debug: print("Executing query: " + query.replace("VALUES","\nVALUES"))
+    if debug: print("Executing query: " + query.replace("VALUES","\n\tVALUES"))
     cur = conn.cursor()
     cur.execute(query)
     conn.commit()

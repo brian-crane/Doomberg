@@ -1,12 +1,19 @@
 import React from 'react';
+import Form from 'react';
 
 const HelloWorld = () => {
-    function sayHello() {
-        alert('Hello World!')
+    async function getUsers() {
+        let url = 'http://localhost:5001/userInfo?userId=1';
+        try {
+            let res = await fetch(url);
+            alert(await res.json());
+        } catch (error) {
+            console.log(error);
+        }
     }
 
     return (
-        <button onClick={sayHello}>Click me!</button>
+        <button onClick={getUsers}>Get Users</button>
     );
 };
 

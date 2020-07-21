@@ -18,27 +18,24 @@ Ask for check to mail to me
     -Mail to Me
 
 """
-import time
-from tools.financeApis import StockTicker as ST
-from tools.db import DbTools as DB
-from tools.db import DbHelper
-from tools.other import Time as T
+from tools.db.helpers import DbPortfolioHelper, DbStockPriceHelper, DbNetWorthHelper
+from tools.financeApis import StockTicker
+from tools.db.helpers import DbHelper
+from tools.other import Time
 
 debug = True
 sleepTimer = 5 #seconds
-alwaysGetDayPrice = False
-alwaysgetAfterHoursPrice = False
+alwaysGetDayPrice = True
+alwaysgetAfterHoursPrice = True
 loopTimer = 180 #seconds
 
 myList = {"NVDA"}
-myList = DbHelper.getPortfolioStockList()
+myList = DbPortfolioHelper.getPortfolioStockList()
 
-while True:
-    for symbol in myList:
-        if T.isMarketOpen() or alwaysGetDayPrice:
-            DbHelper.insertStockPrice(ST.getIEXCloudData(symbol))
-        if T.isAfterHourTradingOpen() or alwaysgetAfterHoursPrice:
-            DbHelper.insertStockPrice(ST.getAfterHourDataCNN(symbol))
-        T.sleep(sleepTimer)
-    DbHelper.calculateAndInsertNetWorthForAllUsers()
-    T.sleep(loopTimer)
+for symbol in myList:
+    if Time.isMarketOpen() or alwaysGetDayPrice:
+        DbStockPriceHelper.insertStockPrice(StockTicker.getIEXCloudData(symbol))
+    if Time.isAfterHourTradingOpen() or alwaysgetAfterHoursPrice:
+        DbStockPriceHelper.insertStockPrice(StockTicker.getAfterHourDataCNN(symbol))
+    Time.sleep(sleepTimer)
+DbNetWorthHelper.calculateAndInsertNetWorthForAllUsers()
