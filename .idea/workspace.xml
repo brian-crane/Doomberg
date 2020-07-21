@@ -1,0 +1,485 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="04632792-8b02-4389-8f20-b46df5c4620e" name="Default Changelist" comment="PRIVATE MEANS PRIVATE">
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/brian.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="C:\Users\brian\Downloads\Doomberg\.idea" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectId" id="1ek5T8yrFCAaPx8sCU1uTVpF05v" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/tools/db" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.ide.settings.spelling" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\brian\Downloads\Doomberg\tools\db\DbHelpers" />
+      <recent name="C:\Users\brian\Downloads\Doomberg\data" />
+      <recent name="C:\Users\brian\Downloads\Doomberg" />
+      <recent name="C:\Users\brian\Downloads\Doomberg\web" />
+      <recent name="C:\Users\brian\Downloads\Doomberg\docs" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\brian\Downloads\Doomberg\tools\db" />
+      <recent name="C:\Users\brian\Downloads\Doomberg\dbscripts" />
+      <recent name="C:\Users\brian\Downloads\Doomberg\docs" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.StockPriceDaemon (1)">
+    <configuration name="FlaskServer" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Doomberg" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/FlaskServer.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="IEXCloud" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Doomberg" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tools" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="C:\Users\brian\Downloads\Doomberg\tools\Stocks\IEXCloud.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="StockPriceDaemon (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Doomberg" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/StockPriceDaemon.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="StockPriceDaemon" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Doomberg" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="C:\Users\brian\Downloads\Doomberg\StockPriceDaemon.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="StockTicker" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Doomberg" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tools/financeApis" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="C:\Users\brian\Downloads\Doomberg\tools\financeApis\StockTicker.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.StockPriceDaemon (1)" />
+        <item itemvalue="Python.FlaskServer" />
+        <item itemvalue="Python.IEXCloud" />
+        <item itemvalue="Python.StockPriceDaemon" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SpellCheckerSettings" BundledDictionaries="6" BundledDictionary0="django.dic" BundledDictionary1="android.dic" BundledDictionary2="python.dic" BundledDictionary3="pythonExtras.dic" BundledDictionary4="jetbrains.dic" BundledDictionary5="english.dic" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="project-level" UseSingleDictionary="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="04632792-8b02-4389-8f20-b46df5c4620e" name="Default Changelist" comment="" />
+      <created>1594852754982</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1594852754982</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Doomberg: Adding more text files for tracking Research Ideas">
+      <created>1594853702703</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1594853702704</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Doomberg: Adding more text files for tracking Research Ideas">
+      <created>1594854009879</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1594854009879</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Adding basic Stock Price checking tools&#10;&#10;IEXCloud&#10;YFInance for historical data&#10;&#10;Added more design documents under /docs&#10;&#10;Started to add SQL files to describe the format of my PostgresSQL DB">
+      <created>1594860221297</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1594860221297</updated>
+    </task>
+    <task id="LOCAL-00004" summary="New documents plans">
+      <created>1594874813857</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1594874813857</updated>
+    </task>
+    <task id="LOCAL-00005" summary="New DBTools, new SQL support, DB insert support&#10;&#10;I still need:&#10;&#10;tests.&#10;login page&#10;portfolio search functionality&#10;AFTER HOURS ROBUST INFO, 3 different avenues of information source.  NO EXCUSE FOR MISSING AFTER HOURS INFO&#10;REFACTOR IN FUTURE IF NECESSARY">
+      <created>1594960465000</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1594960465000</updated>
+    </task>
+    <task id="LOCAL-00006" summary="DB DeDup support added, new helper classes&#10;&#10;ToDo:&#10;&#10;get wget for FREE AFTER HOURS STOCK INFO">
+      <created>1595016813729</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1595016813729</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Heavy refactoring and CNN AFTER HOURS support added">
+      <created>1595028168035</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1595028168035</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Minor refactoring of Daeomon class&#10;&#10;todo:&#10;&#10;New net worth table&#10;New script to update net worth after changes in stock price&#10;Basic NodeJS Hello World Page&#10;Python RESTful FLASK application to handle requests from client side">
+      <created>1595048418114</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1595048418114</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Adding super off hour support (when it says July 17 instead of 4:08 PM)&#10;&#10;Added UserStatsDaemon which will be the class that updates Users.net_worth and other tables">
+      <created>1595051114867</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1595051114867</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Adding basic html site">
+      <created>1595102862245</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1595102862245</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Adding more docs, FlaskServer, images&#10;&#10;todo:&#10;RESTful API&#10;Hook front end up to RESTful APi&#10;more web pages&#10;Graphs added to site&#10;Company Valuation and other fun metrics&#10;The kitchen sink.">
+      <created>1595133769078</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1595133769078</updated>
+    </task>
+    <task id="LOCAL-00012" summary="PRIVATE MEANS PRIVATE">
+      <created>1595133855097</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1595133855097</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Images">
+      <created>1595133997978</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1595133997978</updated>
+    </task>
+    <task id="LOCAL-00014" summary="React JS helloworld added, Flask has 1 new API">
+      <created>1595271176025</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1595271176025</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Refactor, Refactor, Refactor&#10;&#10;Sql tables now have created_ts and modified_ts&#10;   insert statements have been updated&#10;Refactored DB helper class and SqlHelper class&#10;   now it is properly organized by the table it operates on">
+      <created>1595295341529</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1595295341529</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
+    <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Doomberg: Adding more text files for tracking Research Ideas" />
+    <MESSAGE value="Adding basic Stock Price checking tools&#10;&#10;IEXCloud&#10;YFInance for historical data&#10;&#10;Added more design documents under /docs&#10;&#10;Started to add SQL files to describe the format of my PostgresSQL DB" />
+    <MESSAGE value="New documents plans" />
+    <MESSAGE value="New DBTools, new SQL support, DB insert support&#10;&#10;I still need:&#10;&#10;tests.&#10;login page&#10;portfolio search functionality&#10;AFTER HOURS ROBUST INFO, 3 different avenues of information source.  NO EXCUSE FOR MISSING AFTER HOURS INFO&#10;REFACTOR IN FUTURE IF NECESSARY" />
+    <MESSAGE value="DB DeDup support added, new helper classes&#10;&#10;ToDo:&#10;&#10;get wget for FREE AFTER HOURS STOCK INFO" />
+    <MESSAGE value="Heavy refactoring and CNN AFTER HOURS support added" />
+    <MESSAGE value="Minor refactoring of Daeomon class&#10;&#10;todo:&#10;&#10;New net worth table&#10;New script to update net worth after changes in stock price&#10;Basic NodeJS Hello World Page&#10;Python RESTful FLASK application to handle requests from client side" />
+    <MESSAGE value="Adding super off hour support (when it says July 17 instead of 4:08 PM)&#10;&#10;Added UserStatsDaemon which will be the class that updates Users.net_worth and other tables" />
+    <MESSAGE value="Adding basic html site" />
+    <MESSAGE value="Adding more docs, FlaskServer, images&#10;&#10;todo:&#10;RESTful API&#10;Hook front end up to RESTful APi&#10;more web pages&#10;Graphs added to site&#10;Company Valuation and other fun metrics&#10;The kitchen sink." />
+    <MESSAGE value="PRIVATE MEANS PRIVATE" />
+    <MESSAGE value="Images" />
+    <MESSAGE value="React JS helloworld added, Flask has 1 new API" />
+    <MESSAGE value="Refactor, Refactor, Refactor&#10;&#10;Sql tables now have created_ts and modified_ts&#10;   insert statements have been updated&#10;Refactored DB helper class and SqlHelper class&#10;   now it is properly organized by the table it operates on" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactor, Refactor, Refactor&#10;&#10;Sql tables now have created_ts and modified_ts&#10;   insert statements have been updated&#10;Refactored DB helper class and SqlHelper class&#10;   now it is properly organized by the table it operates on" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="1146" y="383" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1595132703871">
+      <screen x="0" y="0" width="2048" height="1152" />
+    </state>
+    <state x="1146" y="383" key="#com.intellij.fileTypes.FileTypeChooser/0.0.2048.1152/-1280.430.1280.720@0.0.2048.1152" timestamp="1595132703870" />
+    <state x="1189" y="283" key="#xdebugger.evaluate" timestamp="1594930635319">
+      <screen x="0" y="0" width="2048" height="1152" />
+    </state>
+    <state x="1189" y="283" key="#xdebugger.evaluate/0.0.2048.1152/-1280.421.1280.720@0.0.2048.1152" timestamp="1594930635319" />
+    <state x="1078" y="202" key="CommitChangelistDialog2" timestamp="1595295340693">
+      <screen x="0" y="0" width="2048" height="1152" />
+    </state>
+    <state x="1175" y="207" key="CommitChangelistDialog2/0.0.2048.1152/-1280.421.1280.720@0.0.2048.1152" timestamp="1595048417398" />
+    <state x="1078" y="202" key="CommitChangelistDialog2/0.0.2048.1152/-1280.430.1280.720@0.0.2048.1152" timestamp="1595295340693" />
+    <state x="1189" y="171" key="CommitChangelistDialog2/0.0.2048.1152/-1280.487.1280.720@0.0.2048.1152" timestamp="1594874813207" />
+    <state width="1327" height="310" key="GridCell.Tab.0.bottom" timestamp="1595294895689">
+      <screen x="0" y="0" width="2048" height="1152" />
+    </state>
+    <state width="1156" height="388" key="GridCell.Tab.0.bottom/0.0.2048.1152/-1280.421.1280.720@0.0.2048.1152" timestamp="1595050670670" />
+    <state width="1327" height="310" key="GridCell.Tab.0.bottom/0.0.2048.1152/-1280.430.1280.720@0.0.2048.1152" timestamp="1595294895689" />
+    <state width="980" height="316" key="GridCell.Tab.0.bottom/0.0.2048.1152/-1280.487.1280.720@0.0.2048.1152" timestamp="1594874491833" />
+    <state width="1327" height="310" key="GridCell.Tab.0.center" timestamp="1595294895689">
+      <screen x="0" y="0" width="2048" height="1152" />
+    </state>
+    <state width="1156" height="388" key="GridCell.Tab.0.center/0.0.2048.1152/-1280.421.1280.720@0.0.2048.1152" timestamp="1595050670670" />
+    <state width="1327" height="310" key="GridCell.Tab.0.center/0.0.2048.1152/-1280.430.1280.720@0.0.2048.1152" timestamp="1595294895689" />
+    <state width="980" height="316" key="GridCell.Tab.0.center/0.0.2048.1152/-1280.487.1280.720@0.0.2048.1152" timestamp="1594874491833" />
+    <state width="1327" height="310" key="GridCell.Tab.0.left" timestamp="1595294895688">
+      <screen x="0" y="0" width="2048" height="1152" />
+    </state>
+    <state width="1156" height="388" key="GridCell.Tab.0.left/0.0.2048.1152/-1280.421.1280.720@0.0.2048.1152" timestamp="1595050670669" />
+    <state width="1327" height="310" key="GridCell.Tab.0.left/0.0.2048.1152/-1280.430.1280.720@0.0.2048.1152" timestamp="1595294895688" />
+    <state width="980" height="316" key="GridCell.Tab.0.left/0.0.2048.1152/-1280.487.1280.720@0.0.2048.1152" timestamp="1594874491833" />
+    <state width="1327" height="310" key="GridCell.Tab.0.right" timestamp="1595294895689">
+      <screen x="0" y="0" width="2048" height="1152" />
+    </state>
+    <state width="1156" height="388" key="GridCell.Tab.0.right/0.0.2048.1152/-1280.421.1280.720@0.0.2048.1152" timestamp="1595050670670" />
+    <state width="1327" height="310" key="GridCell.Tab.0.right/0.0.2048.1152/-1280.430.1280.720@0.0.2048.1152" timestamp="1595294895689" />
+    <state width="980" height="316" key="GridCell.Tab.0.right/0.0.2048.1152/-1280.487.1280.720@0.0.2048.1152" timestamp="1594874491833" />
+    <state width="978" height="390" key="GridCell.Tab.1.bottom" timestamp="1595285979453">
+      <screen x="0" y="0" width="2048" height="1152" />
+    </state>
+    <state width="1156" height="388" key="GridCell.Tab.1.bottom/0.0.2048.1152/-1280.421.1280.720@0.0.2048.1152" timestamp="1595050670670" />
+    <state width="978" height="390" key="GridCell.Tab.1.bottom/0.0.2048.1152/-1280.430.1280.720@0.0.2048.1152" timestamp="1595285979453" />
+    <state width="980" height="389" key="GridCell.Tab.1.bottom/0.0.2048.1152/-1280.487.1280.720@0.0.2048.1152" timestamp="1594859104804" />
+    <state width="978" height="390" key="GridCell.Tab.1.center" timestamp="1595285979452">
+      <screen x="0" y="0" width="2048" height="1152" />
+    </state>
+    <state width="1156" height="388" key="GridCell.Tab.1.center/0.0.2048.1152/-1280.421.1280.720@0.0.2048.1152" timestamp="1595050670670" />
+    <state width="978" height="390" key="GridCell.Tab.1.center/0.0.2048.1152/-1280.430.1280.720@0.0.2048.1152" timestamp="1595285979452" />
+    <state width="980" height="389" key="GridCell.Tab.1.center/0.0.2048.1152/-1280.487.1280.720@0.0.2048.1152" timestamp="1594859104804" />
+    <state width="978" height="390" key="GridCell.Tab.1.left" timestamp="1595285979452">
+      <screen x="0" y="0" width="2048" height="1152" />
+    </state>
+    <state width="1156" height="388" key="GridCell.Tab.1.left/0.0.2048.1152/-1280.421.1280.720@0.0.2048.1152" timestamp="1595050670670" />
+    <state width="978" height="390" key="GridCell.Tab.1.left/0.0.2048.1152/-1280.430.1280.720@0.0.2048.1152" timestamp="1595285979452" />
+    <state width="980" height="389" key="GridCell.Tab.1.left/0.0.2048.1152/-1280.487.1280.720@0.0.2048.1152" timestamp="1594859104804" />
+    <state width="978" height="390" key="GridCell.Tab.1.right" timestamp="1595285979453">
+      <screen x="0" y="0" width="2048" height="1152" />
+    </state>
+    <state width="1156" height="388" key="GridCell.Tab.1.right/0.0.2048.1152/-1280.421.1280.720@0.0.2048.1152" timestamp="1595050670670" />
+    <state width="978" height="390" key="GridCell.Tab.1.right/0.0.2048.1152/-1280.430.1280.720@0.0.2048.1152" timestamp="1595285979453" />
+    <state width="980" height="389" key="GridCell.Tab.1.right/0.0.2048.1152/-1280.487.1280.720@0.0.2048.1152" timestamp="1594859104804" />
+    <state x="1050" y="252" key="SettingsEditor" timestamp="1595010564026">
+      <screen x="0" y="0" width="2048" height="1152" />
+    </state>
+    <state x="1050" y="252" key="SettingsEditor/0.0.2048.1152/-1280.421.1280.720@0.0.2048.1152" timestamp="1595010564026" />
+    <state x="1050" y="252" key="SettingsEditor/0.0.2048.1152/-1280.487.1280.720@0.0.2048.1152" timestamp="1594857749500" />
+    <state x="1127" y="309" key="Vcs.Push.Dialog.v2" timestamp="1595295343044">
+      <screen x="0" y="0" width="2048" height="1152" />
+    </state>
+    <state x="1127" y="309" key="Vcs.Push.Dialog.v2/0.0.2048.1152/-1280.421.1280.720@0.0.2048.1152" timestamp="1595048420291" />
+    <state x="1127" y="309" key="Vcs.Push.Dialog.v2/0.0.2048.1152/-1280.430.1280.720@0.0.2048.1152" timestamp="1595295343044" />
+    <state x="1127" y="309" key="Vcs.Push.Dialog.v2/0.0.2048.1152/-1280.487.1280.720@0.0.2048.1152" timestamp="1594874820126" />
+    <state x="913" y="100" width="1042" height="959" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1595019407980">
+      <screen x="0" y="0" width="2048" height="1152" />
+    </state>
+    <state x="913" y="100" width="1042" height="959" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.2048.1152/-1280.421.1280.720@0.0.2048.1152" timestamp="1595019407980" />
+    <state x="1156" y="230" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1595293267146">
+      <screen x="0" y="0" width="2048" height="1152" />
+    </state>
+    <state x="1156" y="230" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.2048.1152/-1280.430.1280.720@0.0.2048.1152" timestamp="1595293267146" />
+    <state x="1344" y="493" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1595019401452">
+      <screen x="0" y="0" width="2048" height="1152" />
+    </state>
+    <state x="1344" y="493" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2048.1152/-1280.421.1280.720@0.0.2048.1152" timestamp="1595019401452" />
+    <state x="1344" y="493" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2048.1152/-1280.487.1280.720@0.0.2048.1152" timestamp="1594875544954" />
+    <state x="1018" y="316" width="858" height="603" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1595119844539">
+      <screen x="0" y="0" width="2048" height="1152" />
+    </state>
+    <state x="1018" y="316" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.2048.1152/-1280.421.1280.720@0.0.2048.1152" timestamp="1595049132312" />
+    <state x="1018" y="316" width="858" height="603" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.2048.1152/-1280.430.1280.720@0.0.2048.1152" timestamp="1595119844539" />
+    <state x="1143" y="311" width="737" height="606" key="find.popup" timestamp="1595294265710">
+      <screen x="0" y="0" width="2048" height="1152" />
+    </state>
+    <state x="1143" y="311" width="737" height="606" key="find.popup/0.0.2048.1152/-1280.421.1280.720@0.0.2048.1152" timestamp="1595030606485" />
+    <state x="1143" y="311" width="737" height="606" key="find.popup/0.0.2048.1152/-1280.430.1280.720@0.0.2048.1152" timestamp="1595294265710" />
+    <state x="1002" y="306" width="700" height="530" key="recent.locations.popup" timestamp="1595266175027">
+      <screen x="0" y="0" width="2048" height="1152" />
+    </state>
+    <state x="1002" y="306" width="700" height="530" key="recent.locations.popup/0.0.2048.1152/-1280.430.1280.720@0.0.2048.1152" timestamp="1595266175027" />
+    <state x="1191" y="274" key="run.anything.popup" timestamp="1595294020048">
+      <screen x="0" y="0" width="2048" height="1152" />
+    </state>
+    <state x="1191" y="274" key="run.anything.popup/0.0.2048.1152/-1280.421.1280.720@0.0.2048.1152" timestamp="1595030011947" />
+    <state x="1191" y="274" key="run.anything.popup/0.0.2048.1152/-1280.430.1280.720@0.0.2048.1152" timestamp="1595294020048" />
+    <state x="1204" y="259" width="672" height="678" key="search.everywhere.popup" timestamp="1595116212192">
+      <screen x="0" y="0" width="2048" height="1152" />
+    </state>
+    <state x="1204" y="259" width="672" height="678" key="search.everywhere.popup/0.0.2048.1152/-1280.421.1280.720@0.0.2048.1152" timestamp="1595027554557" />
+    <state x="1204" y="259" width="672" height="678" key="search.everywhere.popup/0.0.2048.1152/-1280.430.1280.720@0.0.2048.1152" timestamp="1595116212192" />
+    <state x="1204" y="259" key="search.everywhere.popup/0.0.2048.1152/-1280.487.1280.720@0.0.2048.1152" timestamp="1594860962643" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/FlaskServer.py</url>
+          <line>9</line>
+          <option name="timeStamp" value="89" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/tools/db/helpers/DbHelper.py</url>
+          <line>67</line>
+          <option name="timeStamp" value="95" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/tools/db/helpers/DbHelper.py</url>
+          <line>19</line>
+          <option name="timeStamp" value="96" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/tools/db/helpers/DbHelper.py</url>
+          <line>66</line>
+          <option name="timeStamp" value="103" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/tools/db/helpers/DbHelper.py</url>
+          <line>11</line>
+          <option name="timeStamp" value="104" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/tools/db/helpers/DbHelper.py</url>
+          <line>38</line>
+          <option name="timeStamp" value="105" />
+        </line-breakpoint>
+      </breakpoints>
+      <default-breakpoints>
+        <breakpoint type="python-exception">
+          <properties notifyOnTerminate="true" exception="BaseException">
+            <option name="notifyOnTerminate" value="true" />
+          </properties>
+        </breakpoint>
+      </default-breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
