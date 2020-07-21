@@ -1,13 +1,17 @@
-import React from 'react';
-import HelloWorld from './HelloWorld';
-import './App.css';
+import React, {useState} from 'react';
+import ToDoList from './ToDoList';
 
 function App() {
-  return (
-    <div className="App">
-      <HelloWorld />
-    </div>
-  );
+    const[stocks, addStocks] =  useState(['AAPL','TSLA'])
+    return (
+        <>
+            <ToDoList stocks={stocks}/>
+            <input type="text"/>
+            <button>Get Stock Details</button>
+            <button>Remove Stock from Portfolio</button>
+            <button>Add Stock to Portfolio</button>
+        </>
+    )
 }
 
 export default App;
