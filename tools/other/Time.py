@@ -6,24 +6,25 @@ import time
 
 debug = True
 
+def timeToMins(hour, minute, amPm):
+    value = 60*hour + minute
+    if "pm" in amPm.lower():
+        value += 12*60
+    return value
+
 def sleep(secs):
     print("sleeping for " + str(secs) + " seconds... (" + getTime()+")")
     time.sleep(secs)
 
 def isMarketOpen():
     hour, min = map(int, time.strftime("%H %M").split())
-    if 9*60+30 < hour*60+min < 13*60:
-        #if debug: print("Market is Open.")
-        return True
-    #if debug: print("Market is Closed.")
+    if timeToMins(6,30,"AM") < timeToMins(hour,min,"") < timeToMins(1,00,"PM"): return True
     return False
 
 def isAfterHourTradingOpen():
     hour, min = map(int, time.strftime("%H %M").split())
-    if 13*60 < hour*60+min < 17*60:
-        #if debug: print("After Hour trading is Open.")
-        return True
-    #if debug: print("After Hour trading is Closed.")
+    if timeToMins(1,00,"PM") < timeToMins(hour,min,"") < timeToMins(5,00,"PM"): return True
+    if timeToMins(1,00,"AM") < timeToMins(hour,min,"") < timeToMins(6,30,"AM"): return True
     return False
 
 def getTimeInterval(interval):

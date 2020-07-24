@@ -19,7 +19,7 @@ def updateStockPortfolioSQL(userId, symbol, quanity):
 #add stock price to stocks.price
 def insertSymbolPriceSQL(myDict):
     symbol = myDict.get("symbol")
-    price = myDict.get("price")
+    price = round(float(myDict.get("price")),2)
     priceTs = myDict.get("priceTs")
     isAfterHours = myDict.get("isAfterHours")
     source = myDict.get("source")

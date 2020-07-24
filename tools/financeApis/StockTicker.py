@@ -9,22 +9,28 @@ from tools.other import Time as T
 debug = True
 
 def getIEXCloudData(symbol):
-    url = "https://cloud.iexapis.com/stable/stock/"+symbol+"/batch?types=quote&token=pk_d972831e3b8e4aa38b9e138a7d59aa01"
-    response = requests.get(url)
-    if debug: print(url)
-    data = str(response.content)
-    if response.status_code != 200:
-        if debug: print("\t\tERROR, statusCode: " + str(response.status_code) +"\n\tmessage: " + data)
-        return None
-    data = data[2:len(data)-1]
-    data = json.loads(data)
+    myDict = {}
+    response = ""
+    try:
+        url = "https://cloud.iexapis.com/stable/stock/"+symbol+"/batch?types=quote&token=pk_d972831e3b8e4aa38b9e138a7d59aa01"
+        response = requests.get(url)
+        if debug: print(url)
+        data = str(response.content)
+        if response.status_code != 200:
+            if debug: print("\t\tERROR, statusCode: " + str(response.status_code) +"\n\tmessage: " + data)
+            return None
+        data = data[2:len(data)-1]
+        data = json.loads(data)
 
-    price = data.get("quote").get("latestPrice")
-    priceTs = data.get("quote").get("latestUpdate")
-    priceTs = datetime.datetime.fromtimestamp(float(priceTs)/1000.)
-    myDict = {"symbol":str(symbol),"price":str(price),"priceTs":str(priceTs)[0:str(priceTs).rindex(".")], "isAfterHours":False,"source":"IEXCloud"}
-    if debug: print(myDict)
-    return myDict
+        price = data.get("quote").get("latestPrice")
+        priceTs = data.get("quote").get("latestUpdate")
+        priceTs = datetime.datetime.fromtimestamp(float(priceTs)/1000.)
+        myDict = {"symbol":str(symbol),"price":str(price),"priceTs":str(priceTs)[0:str(priceTs).rindex(".")], "isAfterHours":False,"source":"IEXCloud"}
+        if debug: print(myDict)
+        return myDict
+    except Exception as e:
+        if debug: print("ERROR GETTING DATA FROM IEX: "+ str(e)+"\nmyDict: "+ str(myDict) +"\n response = " + str(response))
+        return None
 
 
 def getAfterHourDataCNN(symbol):

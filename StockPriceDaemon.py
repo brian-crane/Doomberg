@@ -15,7 +15,7 @@ Call Fidelity
 Roll over account
 Ask for check to mail to me
     -Make payable to Charles Schwab, FBO Brian Crane
-    -Mail to Me
+    -Mail to Me=
 
 """
 from tools.db.helpers import DbPortfolioHelper, DbStockPriceHelper, DbNetWorthHelper
@@ -24,18 +24,24 @@ from tools.db.helpers import DbHelper
 from tools.other import Time
 
 debug = True
-sleepTimer = 5 #seconds
 alwaysGetDayPrice = True
 alwaysgetAfterHoursPrice = True
-loopTimer = 180 #seconds
+sleepTimer = 1
+loopTimer = 30
 
-myList = {"NVDA"}
 myList = DbPortfolioHelper.getPortfolioStockList()
 
-for symbol in myList:
-    if Time.isMarketOpen() or alwaysGetDayPrice:
-        DbStockPriceHelper.insertStockPrice(StockTicker.getIEXCloudData(symbol))
-    if Time.isAfterHourTradingOpen() or alwaysgetAfterHoursPrice:
-        DbStockPriceHelper.insertStockPrice(StockTicker.getAfterHourDataCNN(symbol))
-    Time.sleep(sleepTimer)
-DbNetWorthHelper.calculateAndInsertNetWorthForAllUsers()
+while True:
+    for symbol in myList:
+        if Time.isMarketOpen() or alwaysGetDayPrice:
+            DbStockPriceHelper.insertStockPrice(StockTicker.getIEXCloudData(symbol))
+            sleepTimer = 1
+            loopTimer = 30
+        if Time.isAfterHourTradingOpen() or alwaysgetAfterHoursPrice:
+            DbStockPriceHelper.insertStockPrice(StockTicker.getAfterHourDataCNN(symbol))
+            sleepTimer = 5
+            loopTimer = 600
+        else: print("Markets are closed and so are my eyes! zzzzzzz.... " + Time.getTime())
+        Time.sleep(sleepTimer)
+    DbNetWorthHelper.calculateAndInsertNetWorthForAllUsers()
+    Time.sleep(loopTimer)

@@ -7,3 +7,5 @@ def getStockHash(myDict):
     myHash = 0
 
     return myHash
+
+

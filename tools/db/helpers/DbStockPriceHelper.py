@@ -5,6 +5,16 @@ from tools.other import Time as T
 
 debug = True
 
+def getStockPriceOverTime(symbol):
+    if "networth" in symbol.lower():
+        return DbHelper.select("select net_worth from users.net_worth where user_id = 1 ORDER BY net_worth_ts DESC")
+    return DbHelper.select("select price from stocks.price where symbol = '"+symbol+"' ORDER BY price_ts DESC")
+
+def getStockPriceTsOverTime(symbol):
+    if "networth" in symbol.lower():
+        return DbHelper.select("select net_worth_ts from users.net_worth where user_id = 1 ORDER BY net_worth_ts DESC")
+    return DbHelper.select("select price_ts from stocks.price where symbol = '"+symbol+"' ORDER BY price_ts DESC")
+
 
 def getMostRecentPrice(symbol):
     return DbHelper.select("SELECT price from Stocks.price where symbol = '"+symbol+"' ORDER BY price_ts DESC LIMIT 1")
