@@ -27,12 +27,12 @@ app.layout = html.Div([
     dcc.Dropdown(
         id='my-dropdown',
         options=DbHelper.getSymbolDictForFrontEndUse(),
-        value='TSLA'
+        value="User 1's Net Worth"
     ),
     dcc.Dropdown(
         id='my-dropdown2',
         options=DbHelper.getSymbolDictForFrontEndUse(),
-        value='TSLA'
+        value='SPY'
     ),
     dcc.Dropdown(
         id='my-dropdown3',
@@ -42,7 +42,7 @@ app.layout = html.Div([
     dcc.Dropdown(
         id='my-dropdown4',
         options=DbHelper.getSymbolDictForFrontEndUse(),
-        value='TSLA'
+        value='KWEB'
     ),
     dcc.Dropdown(
         id='options',
@@ -56,12 +56,14 @@ app.layout = html.Div([
         id='daterange',
         options=[
             {'label': 'Last Hour', 'value': 'last hour'},
+            {'label': 'Last 4 Hours', 'value': 'last 4 hours'},
+            {'label': 'Last 8 Hours', 'value': 'last 8 hours'},
             {'label': 'Last Day', 'value': 'last day'},
             {'label': 'Last 2 Days', 'value': 'last 2 days'},
             {'label': 'Last Week', 'value': 'last week'},
             {'label': 'Max', 'value': 'max'},
         ],
-        value='Last Hour'
+        value='last day'
     ),
     dcc.Graph(id='my-graph'),
     dcc.Graph(id='my-graph2'),
@@ -75,6 +77,10 @@ def updateGraphHelper(selected_dropdown_value, normalizeStr, dateRange):
     else: normalize = True
     if "last hour" in dateRange:
         dateRange = Time.getDateOffset("hour -1")
+    elif "last 4 hours" in dateRange:
+        dateRange = Time.getDateOffset("hour -4")
+    elif "last 8 hours" in dateRange:
+        dateRange = Time.getDateOffset("hour -8")
     elif "last day" in dateRange:
         dateRange = Time.getDateOffset("day -1")
     elif "last 2 days" in dateRange:
@@ -97,7 +103,7 @@ def updateGraphHelper(selected_dropdown_value, normalizeStr, dateRange):
         ],
         'layout': {
             'margin': {
-                'l': 30,
+                'l': 50,
                 'r': 20,
                 'b': 30,
                 't': 20
