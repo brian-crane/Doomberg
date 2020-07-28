@@ -24,11 +24,10 @@ from tools.db.helpers import DbHelper
 from tools.other import Time
 
 debug = True
-alwaysGetDayPrice = True
-alwaysgetAfterHoursPrice = True
-sleepTimer = 1
-loopTimer = 30
-
+alwaysGetDayPrice = False
+alwaysgetAfterHoursPrice = False
+sleepTimer = 5
+loopTimer = 300
 myList = DbPortfolioHelper.getPortfolioStockList()
 
 while True:
@@ -40,8 +39,7 @@ while True:
         if Time.isAfterHourTradingOpen() or alwaysgetAfterHoursPrice:
             DbStockPriceHelper.insertStockPrice(StockTicker.getAfterHourDataCNN(symbol))
             sleepTimer = 5
-            loopTimer = 600
-        else: print("Markets are closed and so are my eyes! zzzzzzz.... " + Time.getTime())
+            loopTimer = 300
         Time.sleep(sleepTimer)
     DbNetWorthHelper.calculateAndInsertNetWorthForAllUsers()
     Time.sleep(loopTimer)

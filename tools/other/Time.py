@@ -6,6 +6,18 @@ import time
 
 debug = True
 
+def getDateOffset(dateStr):
+    dateArr = dateStr.split(" ")
+    dayOffset = 0
+    hourOffset = 0
+    if "day" in dateArr[0]:
+        dayOffset = int(dateArr[1])
+    if "hour" in dateArr[0]:
+        hourOffset = int(dateArr[1])
+    dateVal = str(getInterval("year"))+"-"+str(getInterval("month"))+"-"+str(int(getInterval("day"))+dayOffset)+" "
+    dateVal += str(int(getInterval("hour"))+hourOffset)+":"+str(getInterval("min"))+":"+str(int(getInterval("second")))
+    return dateVal
+
 def timeToMins(hour, minute, amPm):
     value = 60*hour + minute
     if "pm" in amPm.lower():
@@ -14,6 +26,11 @@ def timeToMins(hour, minute, amPm):
 
 def sleep(secs):
     print("sleeping for " + str(secs) + " seconds... (" + getTime()+")")
+    limit = 60
+    while secs > limit:
+        time.sleep(limit)
+        secs -= limit
+        print("sleeping for " + str(secs) + " seconds... (" + getTime()+")")
     time.sleep(secs)
 
 def isMarketOpen():
@@ -27,9 +44,9 @@ def isAfterHourTradingOpen():
     if timeToMins(1,00,"AM") < timeToMins(hour,min,"") < timeToMins(6,30,"AM"): return True
     return False
 
-def getTimeInterval(interval):
+def getInterval(interval):
     year, month, day, hour, min, second = map(int, time.strftime("%Y %m %d %H %M %S").split())
-    myDict = {"year":year,"month":month,"day":day,"min":min,"second":second}
+    myDict = {"year":year,"month":month,"day":day,"min":min,"hour":hour,"second":second}
     return myDict.get(interval)
 
 def getSqlTime():
