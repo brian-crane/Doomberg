@@ -37,6 +37,7 @@ while True:
                 sleepTimer = 2
             if Time.isAfterHourTradingOpen() or alwaysgetAfterHoursPrice:
                 DbStockPriceHelper.insertStockPrice(StockTicker.getAfterHourDataYahooFinance(symbol))
+                DbStockPriceHelper.insertStockPrice(StockTicker.getAfterHourDataCNN(symbol))
                 sleepTimer = 10
             Time.sleep(sleepTimer)
         DbNetWorthHelper.calculateAndInsertNetWorthForAllUsers()

@@ -3,12 +3,6 @@ This class helps me format SQL messages for use by DbTools
 """
 from tools.other import Time as T
 
-def dupCheckStockPrice(myDict):
-    symbol = myDict.get("symbol")
-    price = myDict.get("price")
-    priceTs = myDict.get("priceTs")
-    return "SELECT * FROM Stocks.price where symbol = '"+str(symbol)+"' and price = "+str(price)+" and price_ts = '"+str(priceTs)+"'"
-
 def insertNetWorthSql(userId,netWorth,netWorthTs):
     return "INSERT INTO users.net_worth (user_id, net_worth, net_worth_ts, created_ts, modified_ts) VALUES ('"+str(userId)+"', '"+str(netWorth)+"', '" + str(netWorthTs)+"', '"+T.getSqlTime()+"', '"+T.getSqlTime()+"');"
 

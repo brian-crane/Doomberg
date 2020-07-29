@@ -5,7 +5,7 @@ from tools.db.helpers import DbHelper, DbPortfolioHelper, DbUserHelper, DbStockP
 debug = True
 
 def dupCheckNetWorth(userId,netWorth,netWorthTs):
-    query = "select * from users.net_worth where user_id = " +str(userId)+" and net_worth = "+str(netWorth)+" and net_worth_ts = '"+netWorthTs+"'"
+    query = "select * from users.net_worth where user_id = " +str(userId)+" and net_worth = "+str(netWorth)+" and ('"+str(netWorthTs)+"' - net_worth_ts) < '01:00:00'"
     records = DB.executeQuery(query)
     if len(records) > 0:
         return True

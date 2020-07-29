@@ -22,9 +22,12 @@ def getMostRecentPrice(symbol):
 
 #Returns true if a stock price has already registed in DB
 def dupCheckStockPrice(myDict):
-    query = SqlHelper.dupCheckStockPrice(myDict)
-    records = DB.executeQuery(query)
+    symbol = myDict.get("symbol")
+    price = myDict.get("price")
+    priceTs = myDict.get("priceTs")
+    records = DB.executeQuery("SELECT * FROM Stocks.price where symbol = '"+str(symbol)+"' and price = "+str(price)+" and ('"+str(priceTs)+"' - price_ts) < '01:00:00'")
     if len(records) > 0:
+        if debug: print(str(records[0]).replace("\n",""))
         return True
     return False
 

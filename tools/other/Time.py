@@ -21,7 +21,9 @@ def getDateOffset(dateStr):
     dateVal += str(int(getInterval("hour"))+hourOffset)+":"+str(getInterval("min"))+":"+str(int(getInterval("second")))
     return dateVal
 
-def timeToMins(hour, minute, amPm):
+def toMins(hour, minute, amPm):
+    hour = int(hour)
+    minute = int(minute)
     value = 60*hour + minute
     if "pm" in amPm.lower():
         value += 12*60
@@ -38,13 +40,13 @@ def sleep(secs):
 
 def isMarketOpen():
     hour, min = map(int, time.strftime("%H %M").split())
-    if timeToMins(6,30,"AM") < timeToMins(hour,min,"") < timeToMins(1,00,"PM"): return True
+    if toMins(6, 30, "AM") < toMins(hour, min, "") < toMins(1, 00, "PM"): return True
     return False
 
 def isAfterHourTradingOpen():
     hour, min = map(int, time.strftime("%H %M").split())
-    if timeToMins(1,00,"PM") < timeToMins(hour,min,"") < timeToMins(5,00,"PM"): return True
-    if timeToMins(1,00,"AM") < timeToMins(hour,min,"") < timeToMins(6,30,"AM"): return True
+    if toMins(1, 00, "PM") < toMins(hour, min, "") < toMins(5, 30, "PM"): return True
+    if toMins(1, 00, "AM") < toMins(hour, min, "") < toMins(6, 30, "AM"): return True
     return False
 
 def getInterval(interval):

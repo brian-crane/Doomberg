@@ -56,7 +56,7 @@ def getIEXCloudData(symbol):
 
 def getAfterHourDataCNN(symbol):
     url = "https://money.cnn.com/quote/quote.html?symb="+symbol
-    if debug: print(url)
+    if debug: print("XXX Getting CNN after hours Data for: " + symbol+"("+url+")")
     response = urllib.request.urlopen(url)
     html = str(response.read())
     htmlTemp = html[html.index("streamFormat=\"ToHundredth\" streamFeed=\"BatsUS\">"):]
@@ -82,7 +82,9 @@ def getAfterHourDataCNN(symbol):
         hour = 17
         minute = 0
         priceTs = datetime.datetime(Time.getInterval("year"), month, day, hour, minute)
-
+    if Time.toMins(hour,minute,"") < Time.toMins("1","10","PM"):
+        if debug: print("We only want true after hours Data with CNN, the current time of CNN data is: " + str(priceTs) +" which disqualifies it")
+        return None
     myDict = {"symbol":str(symbol),"price":str(price),"priceTs":str(priceTs), "isAfterHours":True,"source":"CNN Money"}
     if debug: print(myDict)
     return myDict
