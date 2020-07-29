@@ -26,20 +26,20 @@ from tools.other import Time
 debug = True
 alwaysGetDayPrice = False
 alwaysgetAfterHoursPrice = False
-sleepTimer = 5
-loopTimer = 300
+sleepTimer = 1
 myList = DbPortfolioHelper.getPortfolioStockList()
 
 while True:
-    for symbol in myList:
-        if Time.isMarketOpen() or alwaysGetDayPrice:
-            DbStockPriceHelper.insertStockPrice(StockTicker.getIEXCloudData(symbol))
-            sleepTimer = 1
-            loopTimer = 30
-        if Time.isAfterHourTradingOpen() or alwaysgetAfterHoursPrice:
-            DbStockPriceHelper.insertStockPrice(StockTicker.getAfterHourDataCNN(symbol))
-            sleepTimer = 5
-            loopTimer = 300
-        Time.sleep(sleepTimer)
-    DbNetWorthHelper.calculateAndInsertNetWorthForAllUsers()
-    Time.sleep(loopTimer)
+    if Time.isTradingFloorOpen() or alwaysGetDayPrice or alwaysgetAfterHoursPrice:
+        for symbol in myList:
+            if Time.isMarketOpen() or alwaysGetDayPrice:
+                DbStockPriceHelper.insertStockPrice(StockTicker.getIEXCloudData(symbol))
+                sleepTimer = 2
+            if Time.isAfterHourTradingOpen() or alwaysgetAfterHoursPrice:
+                DbStockPriceHelper.insertStockPrice(StockTicker.getAfterHourDataYahooFinance(symbol))
+                sleepTimer = 10
+            Time.sleep(sleepTimer)
+        DbNetWorthHelper.calculateAndInsertNetWorthForAllUsers()
+    else:
+        print("Markets are CLOSED!")
+        Time.sleep(600)

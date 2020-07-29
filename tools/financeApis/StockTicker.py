@@ -4,9 +4,30 @@ import urllib
 import requests
 import json
 
-from tools.other import Time as T
+from tools.other import Time
 
 debug = True
+
+def getAfterHourDataYahooFinance(symbol):
+    url ="https://finance.yahoo.com/quote/"+symbol
+    if debug: print(">>> Getting Yahoo Finance Data for: " + symbol+"("+url+")")
+    response = urllib.request.urlopen(url)
+    html = str(response.read())
+    if "After hours:<" not in html:
+        if debug: print("No Yahoo Finance After Hours Data for: " + symbol)
+        return None
+    price = html[html.index("\"bid\":{\"raw\":")+13:]
+    price = float(price[0:price.index(",")])
+    priceTs = html[html.index("After hours:<"):]
+    priceTs = priceTs[0:priceTs.index(" EDT")]
+    priceTs = priceTs[priceTs.rindex(">")+1:]
+    hour, min = int(priceTs.split(":")[0])-3, int(priceTs.split(":")[1].replace("PM",""))
+    if "pm" in priceTs.lower():
+        hour += 12
+    priceTs = Time.getIntervalStr("month") +"-"+ Time.getIntervalStr("day") +"-"+ Time.getIntervalStr("year")+" "+str(hour) + ":" + str(min) +":00"
+    myDict = {"symbol":str(symbol),"price":str(price),"priceTs":priceTs, "isAfterHours":True,"source":"Yahoo Finance"}
+    if debug: print("YAHOO FINANCE DATA: " + str(myDict))
+    return myDict
 
 def getIEXCloudData(symbol):
     myDict = {}
@@ -50,17 +71,17 @@ def getAfterHourDataCNN(symbol):
         if "pm" in priceTs:
             hour += 12
         minute = int(priceTs[priceTs.index(":")+1:priceTs.index(":")+3])
-        priceTs = datetime.datetime(T.getInterval("year"), T.getInterval("month"), T.getInterval("day"), hour, minute)
+        priceTs = datetime.datetime(Time.getInterval("year"), Time.getInterval("month"), Time.getInterval("day"), hour, minute)
     except ValueError as e:
         if debug: print("No specific time data avaialble")
         html = html[html.index("As of ")+6:]
         html = html[0:html.index("<")]
         month = html[0:html.index(" ")]
-        month = T.parseMonth(month)
+        month = Time.parseMonth(month)
         day = int(html[html.index(" ")+1:])
         hour = 17
         minute = 0
-        priceTs = datetime.datetime(T.getInterval("year"), month, day, hour, minute)
+        priceTs = datetime.datetime(Time.getInterval("year"), month, day, hour, minute)
 
     myDict = {"symbol":str(symbol),"price":str(price),"priceTs":str(priceTs), "isAfterHours":True,"source":"CNN Money"}
     if debug: print(myDict)

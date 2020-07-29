@@ -6,6 +6,9 @@ import time
 
 debug = True
 
+def isTradingFloorOpen():
+    return isAfterHourTradingOpen() or isMarketOpen()
+
 def getDateOffset(dateStr):
     dateArr = dateStr.split(" ")
     dayOffset = 0
@@ -48,6 +51,9 @@ def getInterval(interval):
     year, month, day, hour, min, second = map(int, time.strftime("%Y %m %d %H %M %S").split())
     myDict = {"year":year,"month":month,"day":day,"min":min,"hour":hour,"second":second}
     return myDict.get(interval)
+
+def getIntervalStr(interval):
+    return str(getInterval(interval))
 
 def getSqlTime():
     year, month, day, hour, min, second = map(int, time.strftime("%Y %m %d %H %M %S").split())
