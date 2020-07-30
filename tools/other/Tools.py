@@ -1,6 +1,26 @@
 """
 This is for generic tools, hashing algos, etc.
 """
+import winsound
+
+
+def playLowBeep():
+    frequency = 100  # Set Frequency To 2500 Hertz
+    duration = 991  # Set Duration To 1000 ms == 1 second
+    winsound.Beep(frequency, duration)
+
+def playHighBeep():
+    frequency = 180  # Set Frequency To 2500 Hertz
+    duration = 991  # Set Duration To 1000 ms == 1 second
+    winsound.Beep(frequency, duration)
+
+def playHigherBeep():
+    frequency = 250  # Set Frequency To 2500 Hertz
+    duration = 850  # Set Duration To 1000 ms == 1 second
+    winsound.Beep(frequency, duration)
+
+
+
 
 #Create a hash to identify a stock Dict as already existing in DB
 def getStockHash(myDict):

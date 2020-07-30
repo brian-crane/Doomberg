@@ -20,12 +20,11 @@ Ask for check to mail to me
 """
 from tools.db.helpers import DbPortfolioHelper, DbStockPriceHelper, DbNetWorthHelper
 from tools.financeApis import StockTicker
-from tools.db.helpers import DbHelper
 from tools.other import Time
 
 debug = True
-alwaysGetDayPrice = False
-alwaysgetAfterHoursPrice = False
+alwaysGetDayPrice = True
+alwaysgetAfterHoursPrice = True
 sleepTimer = 1
 myList = DbPortfolioHelper.getPortfolioStockList()
 
@@ -34,11 +33,11 @@ while True:
         for symbol in myList:
             if Time.isMarketOpen() or alwaysGetDayPrice:
                 DbStockPriceHelper.insertStockPrice(StockTicker.getIEXCloudData(symbol))
-                sleepTimer = 2
+                sleepTimer = 3
             if Time.isAfterHourTradingOpen() or alwaysgetAfterHoursPrice:
                 DbStockPriceHelper.insertStockPrice(StockTicker.getAfterHourDataYahooFinance(symbol))
                 DbStockPriceHelper.insertStockPrice(StockTicker.getAfterHourDataCNN(symbol))
-                sleepTimer = 10
+                sleepTimer = 30
             Time.sleep(sleepTimer)
         DbNetWorthHelper.calculateAndInsertNetWorthForAllUsers()
     else:

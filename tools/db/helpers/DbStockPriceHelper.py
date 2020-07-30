@@ -1,7 +1,7 @@
 from tools.db import DbTools as DB
 from tools.db import SqlHelper
 from tools.db.helpers import DbHelper
-from tools.other import Time as T
+from tools.other import Time as T, Tools
 
 debug = True
 
@@ -36,6 +36,9 @@ def insertStockPrice(myDict):
         if debug: print("given None as argument, skipping insertion")
         return
     if not dupCheckStockPrice(myDict):
+        Tools.playHigherBeep()
+        Tools.playHigherBeep()
+        Tools.playHigherBeep()
         DB.executeQuery(SqlHelper.insertSymbolPriceSQL(myDict))
     else:
         if debug: print("\tDUPLICATE We already have this:\n\t\t " + str(myDict))
